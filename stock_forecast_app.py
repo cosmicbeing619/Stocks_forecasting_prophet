@@ -34,14 +34,6 @@ data = load_data(symbol)
 st.subheader("Raw Data")
 st.write(data.tail())
 
-# Plot closing price
-def plot_data():
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Close Price'))
-    fig.update_layout(title_text="Closing Price Over Time", xaxis_rangeslider_visible=True)
-    st.plotly_chart(fig)
-
-plot_data()
 
 # Prepare data for Prophet
 df_train = data[['Date', 'Close']].copy()
