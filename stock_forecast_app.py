@@ -5,6 +5,12 @@ from prophet import Prophet
 from prophet.plot import plot_plotly
 import plotly.graph_objs as go
 
+
+audio_file = open("assets/Technologia.mp3", "rb")
+audio_bytes = audio_file.read()
+st.audio(audio_bytes, format='audio/mp3')
+
+
 # App title
 st.title("📈 Stock Price Prediction (Next 30 Days)")
 st.markdown("Using Facebook Prophet & Yahoo Finance")
